@@ -6,12 +6,12 @@ class Necklace {
     private double price;
     private String name;
     private int item_id;
-    private Date date_created;
+    private String date_created;
 
     Necklace(int price,
              String name,
              int item_id,
-             Date date_created) {
+             String date_created) {
         this.price = price + .99;
         this.name = name;
         this.item_id = item_id;
@@ -27,6 +27,14 @@ class Necklace {
     int getItem_id(){return item_id;}
     void setItem_id(int id){item_id = id;}
 
-    Date getDate_created(){return date_created;}
-    void setDate_created (Date date){date_created = date;}
+    String getDate_created(){return date_created;}
+    void setDate_created (String date){date_created = date;}
+
+    @Override
+    public String toString() {
+        return "Name= '" + name + '\'' +
+                ", Price= $" + price +
+                ", Item ID= " + item_id +
+                ", Date created= " + date_created;
+    }
 }
